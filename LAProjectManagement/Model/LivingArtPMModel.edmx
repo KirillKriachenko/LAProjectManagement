@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LivingArtPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Parts">
+          <Key>
+            <PropertyRef Name="PartsID" />
+          </Key>
+          <Property Name="PartsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PartFile" Type="nvarchar" MaxLength="50" />
+          <Property Name="X" Type="nvarchar" MaxLength="50" />
+          <Property Name="Y" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Grain" Type="nvarchar" MaxLength="50" />
+          <Property Name="TagVariables" Type="nvarchar(max)" />
+          <Property Name="JobName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemPart" Type="nvarchar" MaxLength="50" />
+          <Property Name="CabinetNum" Type="int" />
+          <Property Name="PartNum" Type="int" />
+          <Property Name="MaterialName" Type="nvarchar(max)" />
+          <Property Name="EdgeInfo" Type="nvarchar(max)" />
+          <Property Name="Barcode" Type="nvarchar(max)" />
+          <Property Name="PartOffset" Type="int" />
+          <Property Name="PartPriority" Type="int" />
+          <Property Name="PartRotation" Type="int" />
+          <Property Name="UnitUnitID" Type="int" />
+          <Property Name="ScannedQuantity" Type="int" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Recuts">
+          <Key>
+            <PropertyRef Name="RecutID" />
+          </Key>
+          <Property Name="RecutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PieceID" Type="int" />
+          <Property Name="OrderDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Issue" Type="nvarchar(max)" />
+          <Property Name="StatusStatusID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Scanneds">
+          <Key>
+            <PropertyRef Name="ScannedID" />
+          </Key>
+          <Property Name="ScannedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateTime" Type="nvarchar(max)" />
+          <Property Name="BarCode" Type="nvarchar(max)" />
+          <Property Name="StatusStatusID" Type="int" Nullable="false" />
+          <Property Name="StatioStationID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stations">
+          <Key>
+            <PropertyRef Name="StationID" />
+          </Key>
+          <Property Name="StationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StationName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Barcode" Type="nvarchar(max)" />
+          <Property Name="DepartureDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectProjectID" Type="int" Nullable="false" />
+          <Property Name="PartsAmount" Type="nvarchar(max)" />
+          <Property Name="PartsScanned" Type="nvarchar(max)" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LivingArtPMModelStoreContainer">
+          <EntitySet Name="Parts" EntityType="Self.Parts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recuts" EntityType="Self.Recuts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scanneds" EntityType="Self.Scanneds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stations" EntityType="Self.Stations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Units" EntityType="Self.Units" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LivingArtPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Parts">
+          <Key>
+            <PropertyRef Name="PartsID" />
+          </Key>
+          <Property Name="PartsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ConcurrencyMode="None" />
+          <Property Name="PartFile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="X" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Y" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Grain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="TagVariables" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="JobName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemPart" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CabinetNum" Type="Int32" />
+          <Property Name="PartNum" Type="Int32" />
+          <Property Name="MaterialName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EdgeInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PartOffset" Type="Int32" />
+          <Property Name="PartPriority" Type="Int32" />
+          <Property Name="PartRotation" Type="Int32" />
+          <Property Name="UnitUnitID" Type="Int32" />
+          <Property Name="ScannedQuantity" Type="Int32" Nullable="true" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="Address" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Recut">
+          <Key>
+            <PropertyRef Name="RecutID" />
+          </Key>
+          <Property Name="RecutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PieceID" Type="Int32" />
+          <Property Name="OrderDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Issue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StatusStatusID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="DepartureDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="ProjectProjectID" Type="Int32" Nullable="false" />
+          <Property Name="PartsAmount" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PartsScanned" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LivingArtPMContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Parts" EntityType="LivingArtPMModel.Parts" />
+          <EntitySet Name="Projects" EntityType="Self.Project" />
+          <EntitySet Name="Recuts" EntityType="Self.Recut" />
+          <EntitySet Name="Units" EntityType="Self.Unit" />
+          <EntitySet Name="Status" EntityType="LivingArtPMModel.Status" />
+          <EntitySet Name="Scanneds" EntityType="LivingArtPMModel.Scanned" />
+          <EntitySet Name="Stations" EntityType="LivingArtPMModel.Station" />
+        </EntityContainer>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          </EntityType>
+        <EntityType Name="Scanned">
+          <Key>
+            <PropertyRef Name="ScannedID" />
+          </Key>
+          <Property Name="ScannedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateTime" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BarCode" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StatusStatusID" Type="Int32" Nullable="false" />
+          <Property Name="StatioStationID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Station">
+          <Key>
+            <PropertyRef Name="StationID" />
+          </Key>
+          <Property Name="StationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StationName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LivingArtPMModelStoreContainer" CdmEntityContainer="LivingArtPMContext">
+    <EntitySetMapping Name="Parts">
+      <EntityTypeMapping TypeName="IsTypeOf(LivingArtPMModel.Parts)">
+        <MappingFragment StoreEntitySet="Parts">
+                <ScalarProperty Name="PartsID" ColumnName="PartsID" />
+          <ScalarProperty Name="PartFile" ColumnName="PartFile" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Grain" ColumnName="Grain" />
+          <ScalarProperty Name="TagVariables" ColumnName="TagVariables" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemPart" ColumnName="ItemPart" />
+          <ScalarProperty Name="CabinetNum" ColumnName="CabinetNum" />
+          <ScalarProperty Name="PartNum" ColumnName="PartNum" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="EdgeInfo" ColumnName="EdgeInfo" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="PartOffset" ColumnName="PartOffset" />
+          <ScalarProperty Name="PartPriority" ColumnName="PartPriority" />
+          <ScalarProperty Name="PartRotation" ColumnName="PartRotation" />
+          <ScalarProperty Name="UnitUnitID" ColumnName="UnitUnitID" />
+          <ScalarProperty Name="ScannedQuantity" ColumnName="ScannedQuantity" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="IsTypeOf(LivingArtPMModel.Project)">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recuts">
+      <EntityTypeMapping TypeName="IsTypeOf(LivingArtPMModel.Recut)">
+        <MappingFragment StoreEntitySet="Recuts">
+          <ScalarProperty Name="RecutID" ColumnName="RecutID" />
+          <ScalarProperty Name="PieceID" ColumnName="PieceID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+          <ScalarProperty Name="StatusStatusID" ColumnName="StatusStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Units">
+      <EntityTypeMapping TypeName="IsTypeOf(LivingArtPMModel.Unit)">
+        <MappingFragment StoreEntitySet="Units">
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+          <ScalarProperty Name="ProjectProjectID" ColumnName="ProjectProjectID" />
+          <ScalarProperty Name="PartsAmount" ColumnName="PartsAmount" />
+          <ScalarProperty Name="PartsScanned" ColumnName="PartsScanned" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="IsTypeOf(LivingArtPMModel.Status)">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scanneds">
+      <EntityTypeMapping TypeName="IsTypeOf(LivingArtPMModel.Scanned)">
+        <MappingFragment StoreEntitySet="Scanneds">
+          <ScalarProperty Name="ScannedID" ColumnName="ScannedID" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="StatusStatusID" ColumnName="StatusStatusID" />
+          <ScalarProperty Name="StatioStationID" ColumnName="StatioStationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stations">
+      <EntityTypeMapping TypeName="IsTypeOf(LivingArtPMModel.Station)">
+        <MappingFragment StoreEntitySet="Stations">
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="StationName" ColumnName="StationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
