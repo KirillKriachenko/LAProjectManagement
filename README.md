@@ -1,5 +1,5 @@
 # LA Project Management v1.
-> Desktop application to track missing parts during manufacturing.
+> Desktop application to track missing parts during manufacturing - C# WPF MVVM.
 
 ## Table of Contents
 * [General Info](#general-information)
