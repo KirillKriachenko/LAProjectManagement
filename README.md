@@ -28,8 +28,8 @@
 
 
 ## Screenshots
-![MainWindow](/LAProjectManagement/assets/LAPM.png)
-![DetailsList](/LAProjectManagement/assets/Parts.png)
+![MainWindow](LAProjectManagement/assets/LAPM.png)
+![DetailsList](LAProjectManagement/assets/Parts.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Usage
