@@ -29,7 +29,7 @@
 
 ## Screenshots
 ![MainWindow](./LAPM.PNG)
-![DetailsList](./Parts.png)
+![DetailsList](./Parts.PNG)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Usage
