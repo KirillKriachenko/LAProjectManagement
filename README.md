@@ -28,7 +28,7 @@
 
 
 ## Screenshots
-![MainWindow](./LAProjectManagement/assets/LAPM.png)
+![MainWindow](./LAProjectManagement/LAProjectManagement/assets/LAPM.PNG)
 ![DetailsList](./LAProjectManagement/assets/Parts.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
